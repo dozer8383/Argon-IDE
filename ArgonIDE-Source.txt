@@ -1,0 +1,111 @@
+"CD480802C9"
+det(14
+
+Lbl M
+1→S
+det(16,30,0
+For(I,0,30,1)
+det(15,30-I,0,150,I*8,169,8)
+End
+"Argon IDE"→Str9
+det(64,1,255,255,20,20
+"IDE"→Str9
+det(64,1,255,255,91,20
+"v0.1.0"→Str9
+det(64,0,19,31,20,40
+
+Repeat G=105
+"New…"→Str9
+If S=1:Then
+det(13,0,255,255,19,31,20,80
+Else
+det(13,0,255,255,30,0,20,80
+End
+"Open…"→Str9
+If S=2:Then
+det(13,0,255,255,19,31,20,100
+Else
+det(13,0,255,255,30,0,20,100
+End
+"Quit"→Str9
+If S=3:Then
+det(13,0,255,255,19,31,20,120
+Else
+det(13,0,255,255,30,0,20,120
+End
+Repeat G≠0
+getKey→G
+End
+If G=24 or G=25
+S-1→S
+If G=26 or G=34
+S+1→S
+If S>3:1→S
+If S<1:3→S
+End
+If S=1:Goto N
+If S=2:Goto O
+If S=3:Goto Q
+
+Lbl Q
+det(82
+"Done"
+Stop
+
+Lbl N
+det(16,30,0
+"New Program"→Str9
+det(64,1,19,31,20,20
+det(68,19,31,110,130,100
+"Name"→Str9
+det(64,0,19,31,110,140
+getKey→G
+" "→Str9
+Repeat G=105
+getKey→G
+If length(Str9)<9:Then
+If G=41:Str9+"A"→Str9
+If G=42:Str9+"B"→Str9
+If G=43:Str9+"C"→Str9
+If G=51:Str9+"D"→Str9
+If G=52:Str9+"E"→Str9
+If G=53:Str9+"F"→Str9
+If G=54:Str9+"G"→Str9
+If G=55:Str9+"H"→Str9
+If G=61:Str9+"I"→Str9
+If G=62:Str9+"J"→Str9
+If G=63:Str9+"K"→Str9
+If G=64:Str9+"L"→Str9
+If G=65:Str9+"M"→Str9
+If G=71:Str9+"N"→Str9
+If G=72:Str9+"O"→Str9
+If G=73:Str9+"P"→Str9
+If G=74:Str9+"Q"→Str9
+If G=75:Str9+"R"→Str9
+If G=81:Str9+"S"→Str9
+If G=82:Str9+"T"→Str9
+If G=83:Str9+"U"→Str9
+If G=84:Str9+"V"→Str9
+If G=85:Str9+"W"→Str9
+If G=91:Str9+"X"→Str9
+If G=92:Str9+"Y"→Str9
+If G=93:Str9+"Z"→Str9
+End
+If G=23 and length(Str9)>1:sub(Str9,1,length(Str9)-1)→Str9
+If G≠0
+det(15,30,0,110,110,140,20
+det(15,0,100+length(Str9)*12,110,10,14
+If length(Str9)>0
+det(64,1,255,255,100,110
+End
+
+det(16,5,0
+det(15,15,0,0,0,319,35
+"File"→Str9
+det(64,0,255,255,10,10
+"Edit"→Str9
+det(64,0,255,255,70,10
+"Help"→Str9
+det(64,0,255,255,130,10
+Pause 
+Goto Q
